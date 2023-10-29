@@ -7,5 +7,6 @@ fun main(args: Array<String>){
     println("Complexe: "+c1.toString())
     println("Complexe: "+c2.toString())
     println("Somme: "+c2.add(c1).toString())
+    println("Soustraction: "+c1.sub(c2).toString())
     println("Produit: "+c2.mult(c1).toString())
 }

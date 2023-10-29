@@ -8,7 +8,7 @@ class Rationnal(num:Int,denom:Int) {
     fun normaliser():Unit{
         val pgcdValue: Int = pgcd(this.num,this.denom)
         this.num /= pgcdValue
-        this.num /= pgcdValue
+        this.denom /= pgcdValue
     }
      fun pgcd(a: Int,b:Int):Int {
         if (a==b)
@@ -44,24 +44,12 @@ class Rationnal(num:Int,denom:Int) {
     }
     companion object{
         fun minRat(R_Tab:ArrayList<Rationnal>):Unit{
-            var val_reel:ArrayList<Double> = ArrayList<Double>()
-            var i: Int = 0
-            while (i<R_Tab.size){
-                var tmp:Double = R_Tab[i].num/R_Tab[i].denom.toDouble()
-                val_reel[i] = tmp
-                i++
-            }
-            var min:Double = val_reel[0]
-            var ind:Int = 0
-            i++
-            while (i<R_Tab.size){
-                if (min>val_reel[i]){
-                    min = val_reel[i]
-                    ind = i
-                }
-                i++
-            }
-            println("Le plus petit est: "+R_Tab[ind].toString())
+
+            var res:Rationnal = R_Tab[0]
+            for (c in R_Tab)
+                if ((res.num/res.denom.toDouble())>(c.num/c.denom.toDouble()))
+                    res = c
+            println("Le plus petit rationnel est: "+res.toString())
         }
     }
 

@@ -1,5 +1,5 @@
 fun main(args: Array<String>) {
-    var r1: Rationnal = Rationnal(3,7)
+    var r1: Rationnal = Rationnal(8,7)
     var r2: Rationnal = Rationnal(2,3)
     var r3:Rationnal = Rationnal(5)
     println(r3.toString())
@@ -7,7 +7,12 @@ fun main(args: Array<String>) {
     println("r1*r2 = "+r1.mult(r2).toString())
     println("r1/r2 = "+r1.div(r2).toString())
 
+    var Tab: ArrayList<Rationnal> = ArrayList()
+    Tab.add(r1)
+    Tab.add(r2)
+    Tab.add(r3)
 
+    Rationnal.minRat(Tab)
 
 }
 
