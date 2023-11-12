@@ -10,26 +10,32 @@ class Fibre(var LSN: ArrayList<Nucleotides> = ArrayList()) {
             println("Nucleotide: "+c.toString())
     }
 
-    companion object{
-        fun complement(N:Nucleotides):Nucleotides{
+    fun complement(N:Nucleotides):Nucleotides{
 
-           return when (N) {
-                Nucleotides.A -> Nucleotides.T
-                Nucleotides.T -> Nucleotides.A
-                Nucleotides.C -> Nucleotides.G
-                else -> Nucleotides.C
-            }
+        return when (N) {
+            Nucleotides.A -> Nucleotides.T
+            Nucleotides.T -> Nucleotides.A
+            Nucleotides.C -> Nucleotides.G
+            else -> Nucleotides.C
         }
-        fun dupliquer(F: Fibre):Fibre{
-            val res = Fibre()
-            for (c in F.LSN)
-                res.LSN.add(complement(c))
-            return res
+    }
+    fun dupliquer():Fibre{
+        val res = Fibre()
+        for (c in this.LSN)
+            res.LSN.add(complement(c))
+        return res
 
-        }
-        //fun comparer(F:Fibre):Boolean{
-         //   return (dupliquer(this)==F)
-        //}
+    }
+    fun comparer(F:Fibre):Boolean{
+       if (this.LSN.size!=F.LSN.size)
+           return false
+       else{
+           for (i in 0 until this.LSN.size){
+               if (this.LSN[i]!=complement(F.LSN[i]))
+                   return false
+           }
+       }
+       return true
     }
     fun Hamming(F: Fibre):Int{
         //On suppose que les deux fibres ont la meme taille
