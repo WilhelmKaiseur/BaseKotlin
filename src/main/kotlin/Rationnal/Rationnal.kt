@@ -1,6 +1,10 @@
 class Rationnal(num:Int,denom:Int) {
 
     var num: Int = num
+        get() = this.num
+        set(n:Int) {
+            field = n
+        }
     var denom: Int = denom
 
     constructor(num: Int):this(num,1)

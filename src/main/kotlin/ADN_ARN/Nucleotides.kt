@@ -5,6 +5,6 @@ enum class Nucleotides(s: String) {
     A("Adenine"),
     G("Guanine"),
     C("Cytosine"),
-    T("Thymine")
-
+    T("Thymine"),
+    U("Uracile")
 }

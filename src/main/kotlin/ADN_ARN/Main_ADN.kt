@@ -4,6 +4,7 @@ fun main(args: Array<String>){
     var f1 = Fibre()
     var f2 = Fibre()
 
+
     f1.run {
 
         LSN.add(Nucleotides.C)
@@ -28,4 +29,7 @@ fun main(args: Array<String>){
     }
 
     println("Distance de Hamming: "+f1.Hamming(f2))
+
+    //f2.affiche()
+
 }
