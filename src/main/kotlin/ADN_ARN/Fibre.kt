@@ -1,16 +1,18 @@
 package ADN_ARN
 
-class Fibre(var LSN: ArrayList<Nucleotides> = ArrayList()) {
+class Fibre<T>(var LSN: ArrayList<T> = ArrayList()) {
+
+    constructor():this(arrayListOf<T>())
 
     fun estVide():Boolean{
         return this.LSN.isEmpty()
     }
     fun affiche():Unit{
         for (c in this.LSN)
-            println("Nucleotide: "+c.toString())
+            println("Nucleotide: "+c)
     }
 
-    fun complement(N:Nucleotides):Nucleotides{
+    fun complement(N: Nucleotides): Nucleotides {
 
         return when (N) {
             Nucleotides.A -> Nucleotides.T
@@ -19,30 +21,48 @@ class Fibre(var LSN: ArrayList<Nucleotides> = ArrayList()) {
             else -> Nucleotides.C
         }
     }
-    fun dupliquer():Fibre{
-        val res = Fibre()
+    fun dupliquer():Fibre<T>{
+        val res:Fibre<T> = Fibre()
         for (c in this.LSN)
-            res.LSN.add(complement(c))
+            res.LSN.add(c.complement())
         return res
 
     }
-    fun comparer(F:Fibre):Boolean{
+    fun comparer(F:Fibre<T>):Boolean{
        if (this.LSN.size!=F.LSN.size)
            return false
        else{
            for (i in 0 until this.LSN.size){
-               if (this.LSN[i]!=complement(F.LSN[i]))
+               if (this.LSN[i]!=F.LSN[i].complement())
                    return false
            }
        }
        return true
     }
-    fun Hamming(F: Fibre):Int{
+    fun comparerSimple(F: Fibre<T>): Boolean {
+        return this.LSN.equals(F.dupliquer().LSN)
+    }
+    fun Hamming1(F: Fibre<T>):Int{
         //On suppose que les deux fibres ont la meme taille
         var res = 0
         for (i in 0 until this.LSN.size)
             if (this.LSN.elementAt(i)!=F.LSN.elementAt(i))
                 res +=1
+        return res
+    }
+    fun Hamming2(F: Fibre<T>):Int{
+        var res=0
+        try {
+            if (this.LSN.size!=F.LSN.size)
+                throw Exception()
+            else
+                for (i in 0 until this.LSN.size)
+                    if (this.LSN.elementAt(i)!=F.LSN.elementAt(i))
+                        res +=1
+        }catch (e:Exception){
+            println("Les deux fibres doivent etre de meme taille !!!")
+            res = -1
+        }
         return res
     }
 

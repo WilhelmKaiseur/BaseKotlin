@@ -1,44 +1,42 @@
 package ADN_ARN
 
-enum class Nucleotides(val s: String) {
-
+enum class Nucleides( val s: String) {
     A("Adenine"){
-        override fun complement(): Nucleotides {
-            return T
+        override fun complement(): Nucleides {
+            return U
         }
 
         override fun toString(): String {
             return A.s
         }
-                },
+    },
     G("Guanine"){
-        override fun complement(): Nucleotides {
+        override fun complement(): Nucleides {
             return C
         }
 
         override fun toString(): String {
             return G.s
         }
-                },
+    },
     C("Cytosine"){
-        override fun complement(): Nucleotides {
+        override fun complement(): Nucleides {
             return G
         }
 
         override fun toString(): String {
             return C.s
         }
-                 },
-    T("Thymine"){
-        override fun complement(): Nucleotides {
+    },
+    U("Uracile"){
+        override fun complement(): Nucleides {
             return A
         }
 
         override fun toString(): String {
-            return T.s
+            return U.s
         }
-                };
+    };
 
-
-    abstract fun complement(): Nucleotides
+    abstract fun complement(): Nucleides
 }

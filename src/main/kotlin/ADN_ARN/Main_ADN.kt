@@ -4,7 +4,6 @@ fun main(args: Array<String>){
     var f1 = Fibre()
     var f2 = Fibre()
     var f3 = Fibre()
-    f3 = f1.dupliquer()
 
 
     f1.run {
@@ -30,9 +29,8 @@ fun main(args: Array<String>){
         LSN.add(Nucleotides.G)
     }
 
-    println("Distance de Hamming: "+f1.Hamming(f2))
-    println("Sont complementaires ? "+f1.comparer(f1.dupliquer()))
-
-    f3.affiche()
+    println("Distance de Hamming: "+f1.Hamming2(f2))
+    for (i in 0 until f1.LSN.size)
+        println(f1.LSN[i].complement() )
 
 }

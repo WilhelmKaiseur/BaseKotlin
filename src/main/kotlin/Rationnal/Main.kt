@@ -2,7 +2,7 @@ fun main(args: Array<String>) {
     var r1: Rationnal = Rationnal(8,7)
     var r2: Rationnal = Rationnal(2,3)
     var r3:Rationnal = Rationnal(5)
-    r3.num=7
+
     println(r3.toString())
     println("r1+r2 = "+r1.add(r2).toString())
     println("r1*r2 = "+r1.mult(r2).toString())
