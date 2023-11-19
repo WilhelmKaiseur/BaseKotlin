@@ -1,9 +1,9 @@
 package ADN_ARN
 
 fun main(args: Array<String>){
-    var f1 = Fibre()
-    var f2 = Fibre()
-    var f3 = Fibre()
+    var f1 = Fibre<Nucleotides>()
+    var f2 = Fibre<Nucleotides>()
+    var f3 = Fibre<Nucleotides>()
 
 
     f1.run {
