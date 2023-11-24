@@ -87,9 +87,9 @@ fun main(args: Array<String>){
                     println("Entrez le montant...")
                     val amt = readln().toInt()
                     TabCompte[i].crediterCompte(amt)
-                    println("Succes!!!\n Nouveau solde: "+TabCompte[i].consulterSolde())
+                    println("Succes!!!\n Nouveau solde: "+TabCompte[i].consulterSolde()+"\n")
                 }else{
-                    println("Compte inexistant")
+                    println("Compte inexistant\n")
                 }
             }
             3->{
@@ -103,11 +103,11 @@ fun main(args: Array<String>){
                     println("Entrez le montant...")
                     val amt = readln().toInt()
                     if (TabCompte[i].debiterCompte(amt))
-                        println("Succes!!!\n Nouveau solde: "+TabCompte[i].consulterSolde())
+                        println("Succes!!!\n Nouveau solde: "+TabCompte[i].consulterSolde()+"\n")
                     else
-                        println("Solde insuffisant")
+                        println("Solde insuffisant\n")
                 }else{
-                    println("Compte inexistant")
+                    println("Compte inexistant\n")
                 }
             }
             4->{
@@ -118,9 +118,9 @@ fun main(args: Array<String>){
                     i++
                 }
                 if (i<TabCompte.size)
-                    println("Solde: "+TabCompte[i].consulterSolde())
+                    println("Solde: "+TabCompte[i].consulterSolde()+"\n")
                 else
-                    println("Compte inexistant")
+                    println("Compte inexistant\n")
             }
             5->{
                 println("Entrez votre numero de compte")
@@ -132,9 +132,14 @@ fun main(args: Array<String>){
                 if (i<TabCompte.size)
                     TabCompte[i].affiche()
                 else
-                    println("Compte inexistant")
+                    println("Compte inexistant\n")
             }
         }
     }while (choix!=6)
+
+    println("""
+        Merci d'etre passe(e)
+        Au plaisir de vous revoir
+    """.trimIndent())
 
 }
