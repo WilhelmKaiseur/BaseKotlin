@@ -5,9 +5,8 @@ fun main(args: Array<String>){
     CE.affiche()*/
 
     println("\t--Bienvenue-- \n Que souhoutez-vous faire?\n")
-
+    val TabCompte = ArrayList<Compte>()
     do {
-        val TabCompte = ArrayList<Compte>()
         println("""
             1-Creer un compte
             2-Crediter mon compte(Depot)
@@ -23,6 +22,7 @@ fun main(args: Array<String>){
                 println("""
                     1-Compte epargne
                     2-Compte courant
+                    3-Compte simple
                 """.trimIndent())
                 val com = readln().toInt()
                 when(com){
@@ -56,6 +56,20 @@ fun main(args: Array<String>){
                         val jours = readln().toInt()
 
                         val C = CompteCourant(num,solde,planch,jours,taux)
+                        TabCompte.add(C)
+                        C.affiche()
+                        println("Success\n")
+                    }
+                    3->{
+                        println("Numero: ")
+                        val num = readln().toInt()
+                        println("Solde: ")
+                        val solde = readln().toInt()
+                        println("Plancher: ")
+                        val planch = readln().toInt()
+                        println("Taux d'agios: ")
+
+                        val C = Compte(num,solde,planch)
                         TabCompte.add(C)
                         C.affiche()
                         println("Success\n")
