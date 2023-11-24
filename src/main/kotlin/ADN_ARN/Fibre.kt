@@ -12,7 +12,7 @@ class Fibre<T>(var LSN: ArrayList<T> = ArrayList()) {
             println("Nucleotide: "+c)
     }
 
-    fun complement(N: Nucleotides): Nucleotides {
+    fun complement(N: Nucleotides):Nucleotides{
 
         return when (N) {
             Nucleotides.A -> Nucleotides.T
@@ -24,16 +24,16 @@ class Fibre<T>(var LSN: ArrayList<T> = ArrayList()) {
     fun dupliquer():Fibre<T>{
         val res:Fibre<T> = Fibre()
         for (c in this.LSN)
-            res.LSN.add(c.complement())
+            //res.LSN.add(complement(c))
         return res
-
+        return TODO("Provide the return value")
     }
     fun comparer(F:Fibre<T>):Boolean{
        if (this.LSN.size!=F.LSN.size)
            return false
        else{
            for (i in 0 until this.LSN.size){
-               if (this.LSN[i]!=F.LSN[i].complement())
+               //if (this.LSN[i]!=F.LSN[i].complement())
                    return false
            }
        }

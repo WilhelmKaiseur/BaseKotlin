@@ -10,7 +10,7 @@ open class CompteEpargne(
         var N: Int = 90*(this.nbJour/90)
         return (this.solde*N*this.tauxInteret)/365
     }
-    fun affiche():Unit{
+    override fun affiche():Unit{
         println("""
             Compte Epargne
                 Numero: ${this.num}

@@ -6,6 +6,16 @@ open class Compte(Num:Int,Solde:Int,Plancher:Int) {
     fun consulterSolde():Int{
         return this.solde
     }
+    fun id():Int{
+        return this.num
+    }
+    open fun affiche(){
+        println("""
+            Compte
+                Numero: ${this.num}
+                Solde: ${this.solde}
+        """.trimIndent())
+    }
     fun crediterCompte(Montant:Int):Unit{
         this.solde += Montant
     }
