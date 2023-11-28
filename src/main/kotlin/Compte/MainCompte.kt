@@ -81,7 +81,7 @@ fun main(args: Array<String>){
             2->{
                 println("Entrez votre numero de compte")
                 val num = readln().toInt()
-                var i:Int = 0
+                var i = 0
                 while (i<TabCompte.size&&num!=TabCompte[i].id())
                     i++
                 if (i<TabCompte.size){
@@ -96,10 +96,9 @@ fun main(args: Array<String>){
             3->{
                 println("Entrez votre numero de compte")
                 val num = readln().toInt()
-                var i:Int = 0
-                while (i<TabCompte.size&&num!=TabCompte[i].id()){
+                var i = 0
+                while (i<TabCompte.size&&num!=TabCompte[i].id())
                     i++
-                }
                 if (i<TabCompte.size){
                     println("Entrez le montant...")
                     val amt = readln().toInt()
@@ -114,10 +113,9 @@ fun main(args: Array<String>){
             4->{
                 println("Entrez votre numero de compte")
                 val num = readln().toInt()
-                var i:Int = 0
-                while (i<TabCompte.size&&num!=TabCompte[i].id()){
+                var i = 0
+                while (i<TabCompte.size&&num!=TabCompte[i].id())
                     i++
-                }
                 if (i<TabCompte.size)
                     println("Solde: "+TabCompte[i].consulterSolde()+"\n")
                 else
@@ -126,10 +124,9 @@ fun main(args: Array<String>){
             5->{
                 println("Entrez votre numero de compte")
                 val num = readln().toInt()
-                var i:Int = 0
-                while (i<TabCompte.size&&num!=TabCompte[i].id()){
+                var i = 0
+                while (i<TabCompte.size&&num!=TabCompte[i].id())
                     i++
-                }
                 if (i<TabCompte.size)
                     TabCompte[i].affiche()
                 else
