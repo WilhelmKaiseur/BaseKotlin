@@ -20,9 +20,13 @@ open class Compte(Num:Int,Solde:Int,Plancher:Int) {
         this.solde += Montant
     }
     fun debiterCompte(Montant:Int):Boolean{
-        if ((this.solde-this.plancher)-Montant>0)
-            this.solde -= Montant
-        return true
+        when {
+            (this.solde-this.plancher)-Montant>0 -> {
+                this.solde -= Montant
+                return true
+            }
+            else -> return false
+        }
     }
 
 }

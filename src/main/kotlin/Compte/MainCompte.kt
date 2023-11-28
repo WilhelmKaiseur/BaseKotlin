@@ -27,6 +27,7 @@ fun main(args: Array<String>){
                 val com = readln().toInt()
                 when(com){
                     1->{
+                        println("--Creation  d'un compte epargne--\n")
                         println("Numero: ")
                         val num = readln().toInt()
                         println("Solde: ")
@@ -44,6 +45,7 @@ fun main(args: Array<String>){
                         println("Success\n")
                     }
                     2->{
+                        println("--Creation  d'un compte courant--\n")
                         println("Numero: ")
                         val num = readln().toInt()
                         println("Solde: ")
@@ -61,13 +63,13 @@ fun main(args: Array<String>){
                         println("Success\n")
                     }
                     3->{
+                        println("--Creation  d'un compte ordinaire--\n")
                         println("Numero: ")
                         val num = readln().toInt()
                         println("Solde: ")
                         val solde = readln().toInt()
                         println("Plancher: ")
                         val planch = readln().toInt()
-                        println("Taux d'agios: ")
 
                         val C = Compte(num,solde,planch)
                         TabCompte.add(C)
@@ -80,9 +82,8 @@ fun main(args: Array<String>){
                 println("Entrez votre numero de compte")
                 val num = readln().toInt()
                 var i:Int = 0
-                while (i<TabCompte.size&&num!=TabCompte[i].id()){
+                while (i<TabCompte.size&&num!=TabCompte[i].id())
                     i++
-                }
                 if (i<TabCompte.size){
                     println("Entrez le montant...")
                     val amt = readln().toInt()
