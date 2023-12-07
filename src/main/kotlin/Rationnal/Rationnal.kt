@@ -15,16 +15,16 @@ class Rationnal(num:Int,denom:Int) {
         this.denom /= pgcdValue
     }
      fun pgcd(a: Int,b:Int):Int {
-        if (a==b)
-            return a
-        else if (a<b)
-            return pgcd(a,(b-a))
-        else
-            return pgcd((a-b),b)
+         return if (a==b)
+             a
+         else if (a<b)
+             pgcd(a,(b-a))
+         else
+             pgcd((a-b),b)
 
     }
     fun add(R:Rationnal):Rationnal{
-        var R1: Rationnal = Rationnal(0,0)
+        val R1: Rationnal = Rationnal(0,0)
         R1.num = (this.num*R.denom)+(this.denom*R.num)
         R1.denom = this.denom*R.denom
         R1.normaliser()

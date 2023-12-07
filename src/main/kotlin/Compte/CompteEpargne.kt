@@ -7,10 +7,10 @@ open class CompteEpargne(
 ): Compte(Num, Solde, Plancher) {
 
     fun calculInteret():Double{
-        var N: Int = 90*(this.nbJour/90)
+        val N: Int = 90*(this.nbJour/90)
         return (this.solde*N*this.tauxInteret)/365
     }
-    override fun affiche():Unit{
+    override fun affiche() {
         println("""
             Compte Epargne
                 Numero: ${this.num}
